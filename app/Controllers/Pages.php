@@ -8,9 +8,7 @@ class Pages extends BaseController
       'title' => 'Home | Andi Naeta',
       'tes' => ['1', '2', '3']
     ];
-    echo view('layout/header', $data);
-    echo view('pages/home');
-    echo view('layout/footer');
+    return view('pages/home', $data);
   }
   
   public function about()
@@ -18,8 +16,26 @@ class Pages extends BaseController
     $data = [
       'title' => 'About Me'
     ];
-    echo view('layout/header', $data);
-    echo view('pages/about');
-    echo view('layout/footer');
+    return view('pages/about', $data);
+  }
+
+  public function contact()
+  {
+    $data = [
+      'title' => 'Contact Us',
+      'alamat' => [
+        [
+          'tipe' => 'Rumah',
+          'alamat' => 'Jl. Bayangkara No.125',
+          'kota' => 'Yogyakarta'
+        ],
+        [
+          'tipe' => 'Kantor',
+          'alamat' => 'Jl. Depati Agung No.203',
+          'kota' => 'Yogyakarta'
+        ]
+      ]
+    ];
+    return view('pages/contact', $data);
   }
 }

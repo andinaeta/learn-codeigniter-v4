@@ -1,3 +1,6 @@
+<?= $this->extend('layout/template'); ?>
+
+<?= $this->section('content'); ?>
 <div class="container">
   <div class="row">
       <h1>About Me</h1>
@@ -6,3 +9,4 @@
     </div>
   </div>
 </div>
+<?= $this->endSection(); ?>
